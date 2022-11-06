@@ -17,40 +17,40 @@ the goal is to sort letters so in the end there will be no cup with 2 or more ty
 # Example
 
 From this position:
-`
+```
  [q]  [w]  [e]  [r]  [ ] 
 
  [r]  [ ]  [q]  [ ]  [w] 
  [r]  [r]  [e]  [ ]  [q] 
  [r]  [q]  [e]  [ ]  [w] 
  [w]  [e]  [q]  [w]  [e] 
-`
+```
 input `qw` to move fluid form `q` to `w` cup
 The result will be:
-`
+```
  [q]  [w]  [e]  [r]  [ ] 
 
  [ ]  [r]  [q]  [ ]  [w] 
  [r]  [r]  [e]  [ ]  [q] 
  [r]  [q]  [e]  [ ]  [w] 
  [w]  [e]  [q]  [w]  [e] 
-`
+```
 To pour from ` ` to `r` input ` r`
 The result will be:
-`
+```
  [q]  [w]  [e]  [r]  [ ] 
 
  [ ]  [r]  [q]  [ ]  [ ] 
  [r]  [r]  [e]  [ ]  [q] 
  [r]  [q]  [e]  [w]  [w] 
  [w]  [e]  [q]  [w]  [e] 
-`
+```
 The winning position could look like this:
-`
+```
  [q]  [w]  [e]  [r]  [ ] 
 
  [w]  [ ]  [ ]  [r]  [e] 
  [w]  [q]  [ ]  [r]  [e] 
  [w]  [q]  [ ]  [r]  [e] 
  [w]  [q]  [q]  [r]  [e] 
-`
+```
