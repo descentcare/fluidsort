@@ -1,5 +1,5 @@
 # Fluidsort
-Fluid sort game written in python
+Fluid sort terminal game written in python
 
 # Requirements
 python3
