@@ -1,6 +1,8 @@
 # Fluidsort
 Fluid sort terminal game written in python
 
+![](./demo.gif)
+
 # Requirements
 python3
 

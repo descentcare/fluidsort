@@ -17,7 +17,7 @@ while not (1 < fluid_level < 10):
     fluid_level = int(input("choose fluid level[2-9]: "))
 letters = ''
 while ' ' in letters or len(letters) < 3 or len(letters) > len(set(letters)):
-    letters = input("choose your controll scheme(key for every fluid cup, unique, no spaces, at least 3):")
+    letters = input("Enter your controll scheme:")
 
 class FluidCup():
     def __init__(self, letter=None):
