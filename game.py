@@ -44,6 +44,9 @@ class FluidCup():
     def closed(self):
         return len(self) == 0 or all(map(lambda c: c == self.cup[0], self.cup)) and len(self) == fluid_level
 
+    def full(self):
+        return all(map(lambda c: c == self.cup[0], self.cup)) and len(self) == fluid_level
+
 def init_board(letters):
     fluid = list(letters) * fluid_level
     random.shuffle(fluid)
@@ -69,10 +72,11 @@ choices = dict()
 for c in board:
     choices[c.letter] = c
 
-ub='┗━┛'
 def print_board(board):
     print('\033[2J\033[2;H\033[m', end='')
     print(''.join(f' {{{x}}} ' for x in letters))
+    for fc in board:
+        print(' ┏━┓ ' if fc.full() else ' '*5,end='')
     print()
     for i in range(fluid_level-1, -1, -1):
         row = []
