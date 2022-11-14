@@ -21,10 +21,19 @@ class FluidCup():
             if len(source_cup) and source_cup.cup[-1] != x:
                 break
     def closed(self):
-        return len(self) == 0 or self.full()
+        '''
+        winning position of a cup
+        '''
+        return self.empty() or self.full() and self.one_colored()
+
+    def empty(self):
+        return len(self) == 0
 
     def full(self):
-        return all(map(lambda c: c == self.cup[0], self.cup)) and len(self) == self.fluid_level
+        return len(self) == self.fluid_level
+
+    def one_colored(self):
+        return all(map(lambda c: c == self.cup[0], self.cup))
 
 class BoardDisplay():
     COLOR_SPACES = [
@@ -52,7 +61,7 @@ class BoardDisplay():
         print('\033[2J\033[2;H\033[m', end='')
         print(''.join(f' {{{x}}} ' for x in self.board.letters))
         for fc in self.board.cups:
-            print(' ┏━┓ ' if fc.full() else ' '*5,end='')
+            print(' ┏━┓ ' if fc.full() and fc.one_colored() else ' '*5,end='')
         print()
         for i in range(self.board.fluid_level-1, -1, -1):
             row = []
